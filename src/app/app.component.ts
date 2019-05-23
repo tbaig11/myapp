@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   names = ['Tariq', 'Arif'];
-}
+  activeTab='student';
+  setActiveTab(tabName:string)
 
+
+{
+ this.activeTab=tabName;
+}
+}

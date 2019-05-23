@@ -1,7 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ul>
-  <li *ngFor="let name of names" [ngStyle]="{'font-style':'italic', 'color':'red'}">{{name}}
+  <li *ngFor="let name of names" appMyDirective>{{name}}
   </li>
 
 </ul>
+<ul>
+  <li (click)="setActiveTab('student')">Student</li>
+  <li (click)="setActiveTab('ta')">TA</li>
 
+</ul>
+
+<div [ngSwitch]="activeTab">
+    <div *ngSwitchCase="'student'"><app-student></app-student></div>
+    <div *ngSwitchCase="'ta'"><app-ta></app-ta></div>
+</div>
